@@ -19,6 +19,11 @@ final class Chat implements JsonSerializable
         return new static($userId);
     }
 
+    public function equals(self $other): bool
+    {
+        return $this->subject === $other->subject;
+    }
+
     public function jsonSerialize()
     {
         return $this->subject;
